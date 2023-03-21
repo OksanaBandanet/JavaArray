@@ -31,7 +31,7 @@ public class StatsService {
         long saleMin = sales[0];
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < saleMin) {
+            if (sales[i] <= saleMin) {
                 monthMin = i;
                 saleMin = sales[i];
             }
@@ -39,7 +39,7 @@ public class StatsService {
         return monthMin + 1;
     }
 
-    public int bad(long[] sales) {
+    public int belowAverage(long[] sales) {
         long avaradeSale = average(sales);
         int counter = 0;
         for (long sale : sales) {
@@ -50,7 +50,7 @@ public class StatsService {
         return counter;
     }
 
-    public int good(long[] sales) {
+    public int aboveAverage(long[] sales) {
         long avaradeSale = average(sales);
         int counter = 0;
         for (long sale : sales) {
